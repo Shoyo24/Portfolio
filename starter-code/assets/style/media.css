@@ -1,0 +1,173 @@
+@import "/starter-code/assets/style/main.css";
+
+/* --------------------------------- Tablet --------------------------------- */
+@media(min-width: 750px) {
+    /* Global */
+    .main-container {
+        padding: 2em;
+    }
+
+    /* Navbar */
+    .navbar {
+        align-items: end;
+    }
+
+    .nav-menu {
+        gap: 2.5em;
+    }
+
+    .nav-link-logo {
+        width: 1.5em;
+    }
+
+    /* Profile */
+    .profile {
+        flex-direction: row;
+        text-align: start;
+    }
+
+    .profile-info-wrapper {
+        align-items: start;
+        width: 70%;
+    }
+
+    .profile-title {
+        font-size: 2.9rem;
+    }
+
+    .profile-info {
+        font-size: 1.5rem;
+    }
+
+    .contact-btn {
+        font-size: var(--fsize-medium);
+    }
+
+    /* Skills */
+    .skills {
+        border-bottom: none;
+    }
+
+    .skill-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Project */
+    .project-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-top-box {
+        text-align: center;
+    }
+
+    .project-title {
+        font-size: 3.5rem;
+    }
+
+    .contact-btn-sm {
+        font-size: var(--fsize-medium);
+    }
+
+    /* Contact */
+    .contact-title {
+        font-size: var(--fsize-large);
+    }
+    
+    .contact-info {
+        font-size: 1.5rem;
+    }
+
+    .form-input[type="text"] {
+        font-size: 2rem;
+    }
+
+    .message {
+        font-size: 2rem;
+    }
+
+    .send-msg-btn {
+        font-size: 1.5rem;
+    }
+}
+
+/* --------------------------------- Desktop - small -------------------------------- */
+@media(min-width: 950px) {
+    .main-container {
+        padding: 3em;
+    }
+
+    /* Navbar */
+    .nav-menu {
+        gap: 2em;
+    }
+
+    .nav-link-logo {
+        width: 20px;
+    }
+
+    /* Profile */
+    .profile {
+        margin-top: 2rem;
+    }
+
+    .profile-title {
+        width: 100%;
+        font-size: 4em;
+    }
+
+    /* Footer */
+    .footer-brand {
+        font-family: 'SpaceGroteskBold';
+        font-size: var(--fsize-large);
+        display: block;
+        padding: 0;
+    }
+
+    /* Skill */
+    .skill {
+        background-color: transparent;
+        grid-template-columns: repeat(3, 2%0)
+    }
+
+    /* Footer */
+    .footer-nav {
+        text-align: center;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 2%;
+    }
+
+    .footer-menu {
+        gap: 2em;
+    }
+
+    .footer-nav-link {
+        width: 1.3em;
+    }
+}
+
+/* ----------------------------- Desktop - large ---------------------------- */
+@media(min-width: 1440px) {
+    /* Global */
+    .main-container {
+        padding: 10em;
+    }
+
+    .nav-menu {
+        gap: 3em;
+    }
+    
+    .nav-link-logo {
+        width: 2em;
+    }
+
+    /* Profile */
+    .profile-title {
+        font-size: 5em;
+    }
+
+    .profile-info {
+        font-size: 2em;
+        width: 80%;
+    }
+}

@@ -1,0 +1,371 @@
+/* -------------------------------- CSS Reset ------------------------------- */
+*, *::before, *::after {
+box-sizing: border-box;
+}
+* {
+margin: 0;
+}
+html, body {
+height: 100%;
+}
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+#root, #__next {
+isolation: isolate;
+}
+li, a, ul {
+list-style: none;
+text-decoration: none;
+color: black;
+margin: 0;
+padding: 0;
+color: white;
+}
+
+textarea {
+    resize: none;
+}
+
+/* ---------------------------------- Varibales --------------------------------- */
+:root {
+    /* Colors */
+    --main-bg-clr-black: hsl(0, 0%, 8%);
+    --active-clr-green: hsl(153, 71%, 59%);
+    --sub-text-clr-gray: hsl(0, 0%, 14%);
+    --p-text-clr-light-gray: hsl(0, 0%, 85%);
+    --heading-text-clr-white: hsl(0, 0%, 100%);
+    --inavlid-text-clr-red: #FF6F5B;
+
+    /* Typography */
+    --fsize-x-large: 88px;
+    --fsize-large: 40px;
+    --fsize-medium: 24px; 
+    --fsize-small: 18px;
+}
+
+
+/* ---------------------------------- Fonts --------------------------------- */
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url(/starter-code/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'SpaceGroteskMedium';
+    src: url(/starter-code/assets/fonts/static/SpaceGrotesk-Medium.ttf);
+}
+@font-face {
+    font-family: 'SpaceGroteskBold';
+    src: url(/starter-code/assets/fonts/static/SpaceGrotesk-Bold.ttf);
+}
+
+/* ----------------------------- General Styles ----------------------------- */
+/* Active-state */
+button {
+    background-image: linear-gradient(
+      to right,
+      var(--active-clr-green),
+      var(--active-clr-green) 50%,
+      #fffdfd 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:before {
+    content: '';
+    background: var(--active-clr-green);
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+   background-position: 0;
+  }
+  
+  button:hover::before {
+    width:100%;
+  }
+
+
+/* re-usuable elements */
+.btn {
+    font-family: 'SpaceGroteskMedium';
+    font-size: var(--fsize-small);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    text-decoration-color: var(--active-clr-green);
+}   
+
+
+/* Global */
+* {
+    font-family: 'SpaceGrotesk';
+    color: var(--heading-text-clr-white);
+}
+
+body {
+    background-color: var(--main-bg-clr-black);
+}
+
+.main-container {
+    padding: 1em;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-brand {
+    font-family: 'SpaceGroteskMedium';
+    font-size: var(--fsize-medium);
+}
+
+.nav-menu {
+    display: flex;
+    margin-top: 1em;
+    gap: 1.5em;
+}
+
+.nav-link-logo {
+    width: 18px;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.profile-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.profile-title {
+    font-size: var(--fsize-large);
+    line-height: 1em;
+}
+
+.profile-title span {
+    text-decoration: underline;
+    text-decoration-color: var(--active-clr-green);
+    text-underline-offset: 10px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-direction: column;
+    margin: 4em 0;
+    padding-bottom: 3.5em;
+    gap: 3em;
+    text-align: center;
+    border-top: 1px solid var(--p-text-clr-light-gray);
+    border-bottom: 1px solid var(--p-text-clr-light-gray);
+}
+
+.skill-title {
+    padding: 30px 0 8px;
+    position: relative;
+    font-size: var(--fsize-large);
+    text-transform: capitalize;
+}
+
+.skill-title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    width: 150px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(33, 153, 113, 0.5);
+    z-index: -1;
+}
+
+.skill-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    text-align: center;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.skill:nth-child(n+3) {
+    text-transform: capitalize;
+}
+
+.skill:nth-child(-n + 2) {
+    text-transform: uppercase;
+}
+
+.fa-brands {
+    font-size: 3em;
+}
+
+/* Projects */
+.projects {
+    display: grid;
+    margin: 4em 0;
+    gap: 2em;
+}
+
+.project-top-box {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    align-items: center;
+}
+
+.project-title {
+    padding: 30px 0 8px;
+    font-size: var(--fsize-large);
+}
+
+.contact-btn-sm {
+    font-size: 13px;
+}
+
+.project-wrapper {
+    display: grid;
+    gap: 3em;
+}
+
+.project-box {
+    display: grid;
+    gap: 10px;    
+    text-transform: uppercase;
+}
+
+.project-name {
+    letter-spacing: 2px;
+}
+
+.project-skills-used {
+    word-spacing: 1em;
+    color: var(--p-text-clr-light-gray);
+}
+
+.project-view-option {
+    display: flex;
+    gap: 1em;
+}
+
+.view-project,
+.view-code {
+    font-size: 13px;
+    text-align: start;
+}
+
+/* Contact */
+.contact {
+    padding: 1em;
+    background-color: var(--sub-text-clr-gray);
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    gap: 2em;
+}
+
+.contact-info-box {
+    display: grid;
+    gap: 1em;
+}
+
+.contact-info {
+    font-size: 1rem;
+    color: var(--p-text-clr-light-gray);
+}
+
+.contact-form:last-child {
+    text-align: end;
+}
+
+.form-input,
+.message {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--p-text-clr-light-gray);
+    padding: 1em;
+}
+
+.send-msg-btn {
+    font-size: 13px;
+    margin: 1em 0;
+}
+
+/* Footer menu */
+.footer-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'SpaceGroteskBold';
+    font-size: var(--fsize-medium);
+    text-transform: capitalize;
+    gap: 1em;
+    margin-top: 2em;
+    border-top: 1px solid var(--p-text-clr-light-gray);
+    padding: 10%;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 1em;
+}
+
+.footer-brand {
+    display: none;
+}
+
+.footer-nav-link {
+    width: 0.8em;
+}
